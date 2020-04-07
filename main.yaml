@@ -55,8 +55,8 @@ Parameters:
     Type: String
     NoEcho: true
     MinLength: 10
-    MaxLength: 40
-    AllowedPattern: "[a-z0-9]*"
+    MaxLength: 150
+    AllowedPattern: "[a-zA-Z0-9]*"
 
 Resources:
 
