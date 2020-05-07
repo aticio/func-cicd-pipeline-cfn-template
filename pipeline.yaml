@@ -26,9 +26,7 @@ Parameters:
     Type: String
   BackendServiceBaseURL:
     Type: String
-  BackendServiceApiKeySecretArn:
-    Type: String
-  BackendServiceSecretKeySecretArn:
+  KeysSecretArn:
     Type: String
 
 Resources:
@@ -117,8 +115,7 @@ Resources:
                   {
                     "FunctionName": "${FunctionName}",
                     "BackendServiceBaseURL": "${BackendServiceBaseURL}",
-                    "BackendServiceApiKeySecretArn": "${BackendServiceApiKeySecretArn}",
-                    "BackendServiceSecretKeySecretArn": "${BackendServiceSecretKeySecretArn}",
+                    "KeysSecretArn": "${KeysSecretArn}",
                     "Environment": "${Environment}",
                     "Application": "${Project}"
                   }'
