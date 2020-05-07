@@ -28,6 +28,8 @@ Parameters:
     Type: String
   BackendServiceApiKeySecretArn:
     Type: String
+  BackendServiceSecretKeySecretArn:
+    Type: String
 
 Resources:
   # CodeBuild
@@ -116,6 +118,7 @@ Resources:
                     "FunctionName": "${FunctionName}",
                     "BackendServiceBaseURL": "${BackendServiceBaseURL}",
                     "BackendServiceApiKeySecretArn": "${BackendServiceApiKeySecretArn}",
+                    "BackendServiceSecretKeySecretArn": "${BackendServiceSecretKeySecretArn}",
                     "Environment": "${Environment}",
                     "Application": "${Project}"
                   }'

@@ -57,6 +57,12 @@ Parameters:
     MinLength: 10
     MaxLength: 150
     AllowedPattern: "[a-zA-Z0-9]*"
+  BackendServiceSecretKey:
+    Type: String
+    NoEcho: true
+    MinLength: 10
+    MaxLength: 150
+    AllowedPattern: "[a-zA-Z0-9]*"
 
 Resources:
 
@@ -78,6 +84,17 @@ Resources:
       Name: !Sub '/${Environment}/BackendServiceApiKeySecret'
       Description: This is the API Key for the backend service to be called by the function
       SecretString: !Sub '{"key":"${BackendServiceApiKey}"}'
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Application
+          Value: !Ref Project
+  BackendServiceSecretKeySecret:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      Name: !Sub '/${Environment}/BackendServiceSecretKeySecret'
+      Description: This is the Secret Key for the backend service to be called by the function
+      SecretString: !Sub '{"key":"${BackendServiceSecretKey}"}'
       Tags:
         - Key: Environment
           Value: !Ref Environment
@@ -123,3 +140,4 @@ Resources:
         Repository: !Ref Repository
         BackendServiceBaseURL: !Ref BackendServiceBaseURL
         BackendServiceApiKeySecretArn: !Ref BackendServiceApiKeySecret
+        BackendServiceSecretKeySecretArn: !Ref BackendServiceSecretKeySecret
