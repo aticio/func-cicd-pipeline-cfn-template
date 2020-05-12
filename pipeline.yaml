@@ -28,6 +28,8 @@ Parameters:
     Type: String
   KeysSecretArn:
     Type: String
+  PositionParamName:
+    Type: String
 
 Resources:
   # CodeBuild
@@ -116,6 +118,7 @@ Resources:
                     "FunctionName": "${FunctionName}",
                     "BackendServiceBaseURL": "${BackendServiceBaseURL}",
                     "KeysSecretArn": "${KeysSecretArn}",
+                    "PositionParamName": "${PositionParamName}",
                     "Environment": "${Environment}",
                     "Application": "${Project}"
                   }'

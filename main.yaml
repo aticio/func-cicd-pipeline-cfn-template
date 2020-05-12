@@ -90,6 +90,21 @@ Resources:
         - Key: Application
           Value: !Ref Project
 
+  # Parameter Store
+  PositionParam:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: position
+      Type: String
+      Value: '0'
+      Description: The current position
+      AllowedPattern: "^([+-]?[1]\d*|0)$"
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Application
+          Value: !Ref Project
+
   # Nested Stacks
   IAM:
     Type: AWS::CloudFormation::Stack
@@ -129,3 +144,4 @@ Resources:
         Repository: !Ref Repository
         BackendServiceBaseURL: !Ref BackendServiceBaseURL
         KeysSecretArn: !Ref KeysSecret
+        PositionParamName: !Ref PositionParam
