@@ -30,6 +30,14 @@ Parameters:
     Type: String
   PositionParamName:
     Type: String
+  ProfitCollectedParamName:
+    Type: String
+  PositionPriceParamName:
+    Type: String
+  StopLossPriceParamName:
+    Type: String
+  TakeProfitPriceParamName:
+    Type: String
 
 Resources:
   # CodeBuild
@@ -118,7 +126,11 @@ Resources:
                     "FunctionName": "${FunctionName}",
                     "BackendServiceBaseURL": "${BackendServiceBaseURL}",
                     "KeysSecretArn": "${KeysSecretArn}",
-                    "PositionParamName": "${PositionParamName}",
+                    "PosPrm": "${PositionParamName}",
+                    "ProfitCollPrm": "${ProfitCollectedParamName}",
+                    "PosPrcPrm": "${PositionPriceParamName}",
+                    "SLPrcPrm":"${StopLossPriceParamName}",
+                    "TPPrcPrm": "${TakeProfitPriceParamName}",
                     "Environment": "${Environment}",
                     "Application": "${Project}"
                   }'

@@ -104,6 +104,58 @@ Resources:
           Value: !Ref Environment
         - Key: Application
           Value: !Ref Project
+  ProfitCollectedParam:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: profit-collected
+      Type: String
+      Value: '0'
+      Description: Indicates whether the profit is colleceted already
+      AllowedPattern: "^(1|0)$"
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Application
+          Value: !Ref Project
+  PositionPriceParam:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: position-price
+      Type: String
+      Value: '0'
+      Description: The position price (a positive float)
+      AllowedPattern: "^[0-9]+(?:\.[0-9]+)?$"
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Application
+          Value: !Ref Project
+  StopLossPriceParam:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: stop-loss-price
+      Type: String
+      Value: '0'
+      Description: The stop-loss price (a positive float)
+      AllowedPattern: "^[0-9]+(?:\.[0-9]+)?$"
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Application
+          Value: !Ref Project
+  TakeProfitPriceParam:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: take-profit-price
+      Type: String
+      Value: '0'
+      Description: The take-profit price (a positive float)
+      AllowedPattern: "^[0-9]+(?:\.[0-9]+)?$"
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Application
+          Value: !Ref Project
 
   # Nested Stacks
   IAM:
@@ -145,3 +197,7 @@ Resources:
         BackendServiceBaseURL: !Ref BackendServiceBaseURL
         KeysSecretArn: !Ref KeysSecret
         PositionParamName: !Ref PositionParam
+        ProfitCollectedParamName: !Ref ProfitCollectedParam
+        PositionPriceParamName: !Ref PositionPriceParam
+        StopLossPriceParamName: !Ref StopLossPriceParam
+        TakeProfitPriceParamName: !Ref TakeProfitPriceParam
