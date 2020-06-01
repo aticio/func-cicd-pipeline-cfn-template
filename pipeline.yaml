@@ -131,7 +131,7 @@ Resources:
                     "Pos": "${PositionParamName}",
                     "PrftColl": "${ProfitCollectedParamName}",
                     "PosPrc": "${PositionPriceParamName}",
-                    "SLPrc":"${StopLossPriceParamName}",
+                    "SLPrc": "${StopLossPriceParamName}",
                     "TPPrc": "${TakeProfitPriceParamName}",
                     "OvrBlnc": "${OverBalanceParamName}",
                     "Environment": "${Environment}",
