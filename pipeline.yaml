@@ -38,6 +38,8 @@ Parameters:
     Type: String
   TakeProfitPriceParamName:
     Type: String
+  OverBalanceParamName:
+    Type: String
 
 Resources:
   # CodeBuild
@@ -126,11 +128,12 @@ Resources:
                     "FunctionName": "${FunctionName}",
                     "BackendServiceBaseURL": "${BackendServiceBaseURL}",
                     "KeysSecretArn": "${KeysSecretArn}",
-                    "PosPrm": "${PositionParamName}",
-                    "ProfitCollPrm": "${ProfitCollectedParamName}",
-                    "PosPrcPrm": "${PositionPriceParamName}",
-                    "SLPrcPrm":"${StopLossPriceParamName}",
-                    "TPPrcPrm": "${TakeProfitPriceParamName}",
+                    "Pos": "${PositionParamName}",
+                    "PrftColl": "${ProfitCollectedParamName}",
+                    "PosPrc": "${PositionPriceParamName}",
+                    "SLPrc":"${StopLossPriceParamName}",
+                    "TPPrc": "${TakeProfitPriceParamName}",
+                    "OvrBlnc": "${OverBalanceParamName}",
                     "Environment": "${Environment}",
                     "Application": "${Project}"
                   }'

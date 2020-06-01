@@ -156,6 +156,19 @@ Resources:
           Value: !Ref Environment
         - Key: Application
           Value: !Ref Project
+  OverBalanceParam:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: over-balance
+      Type: String
+      Value: '0'
+      Description: Indicates whether over balance
+      AllowedPattern: "^(1|0)$"
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Application
+          Value: !Ref Project
 
   # Nested Stacks
   IAM:
@@ -201,3 +214,4 @@ Resources:
         PositionPriceParamName: !Ref PositionPriceParam
         StopLossPriceParamName: !Ref StopLossPriceParam
         TakeProfitPriceParamName: !Ref TakeProfitPriceParam
+        OverBalanceParamName: !Ref OverBalanceParam
