@@ -104,13 +104,13 @@ Resources:
           Value: !Ref Environment
         - Key: Application
           Value: !Ref Project
-  ProfitCollectedParam:
+  ProfitTakenParam:
     Type: AWS::SSM::Parameter
     Properties:
-      Name: profit-collected
+      Name: profit-taken
       Type: String
       Value: '0'
-      Description: Indicates whether the profit is colleceted already
+      Description: Indicates whether the profit is collected already
       AllowedPattern: "^(1|0)$"
       Tags:
         - Key: Environment
@@ -210,7 +210,7 @@ Resources:
         BackendServiceBaseURL: !Ref BackendServiceBaseURL
         KeysSecretArn: !Ref KeysSecret
         PositionParamName: !Ref PositionParam
-        ProfitCollectedParamName: !Ref ProfitCollectedParam
+        ProfitTakenParamName: !Ref ProfitTakenParam
         PositionPriceParamName: !Ref PositionPriceParam
         StopLossPriceParamName: !Ref StopLossPriceParam
         TakeProfitPriceParamName: !Ref TakeProfitPriceParam

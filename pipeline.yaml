@@ -30,7 +30,7 @@ Parameters:
     Type: String
   PositionParamName:
     Type: String
-  ProfitCollectedParamName:
+  ProfitTakenParamName:
     Type: String
   PositionPriceParamName:
     Type: String
@@ -129,7 +129,7 @@ Resources:
                     "BackendServiceBaseURL": "${BackendServiceBaseURL}",
                     "KeysSecretArn": "${KeysSecretArn}",
                     "Pos": "${PositionParamName}",
-                    "PrftColl": "${ProfitCollectedParamName}",
+                    "PrftTk": "${ProfitTakenParamName}",
                     "PosPrc": "${PositionPriceParamName}",
                     "SLPrc": "${StopLossPriceParamName}",
                     "TPPrc": "${TakeProfitPriceParamName}",
