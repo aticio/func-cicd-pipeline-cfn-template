@@ -100,10 +100,8 @@ Resources:
       Description: The current position
       AllowedPattern: "^([+-]?[1]\d*|0)$"
       Tags:
-        - Key: Environment
-          Value: !Ref Environment
-        - Key: Application
-          Value: !Ref Project
+        Environment: !Ref Environment
+        Application: !Ref Project
   ProfitTakenParam:
     Type: AWS::SSM::Parameter
     Properties:
@@ -113,10 +111,8 @@ Resources:
       Description: Indicates whether the profit is collected already
       AllowedPattern: "^(1|0)$"
       Tags:
-        - Key: Environment
-          Value: !Ref Environment
-        - Key: Application
-          Value: !Ref Project
+        Environment: !Ref Environment
+        Application: !Ref Project
   PositionPriceParam:
     Type: AWS::SSM::Parameter
     Properties:
@@ -126,10 +122,8 @@ Resources:
       Description: The position price (a positive float)
       AllowedPattern: "^[0-9]+(?:\.[0-9]+)?$"
       Tags:
-        - Key: Environment
-          Value: !Ref Environment
-        - Key: Application
-          Value: !Ref Project
+        Environment: !Ref Environment
+        Application: !Ref Project
   StopLossPriceParam:
     Type: AWS::SSM::Parameter
     Properties:
@@ -139,10 +133,8 @@ Resources:
       Description: The stop-loss price (a positive float)
       AllowedPattern: "^[0-9]+(?:\.[0-9]+)?$"
       Tags:
-        - Key: Environment
-          Value: !Ref Environment
-        - Key: Application
-          Value: !Ref Project
+        Environment: !Ref Environment
+        Application: !Ref Project
   TakeProfitPriceParam:
     Type: AWS::SSM::Parameter
     Properties:
@@ -152,10 +144,8 @@ Resources:
       Description: The take-profit price (a positive float)
       AllowedPattern: "^[0-9]+(?:\.[0-9]+)?$"
       Tags:
-        - Key: Environment
-          Value: !Ref Environment
-        - Key: Application
-          Value: !Ref Project
+        Environment: !Ref Environment
+        Application: !Ref Project
   OverBalanceParam:
     Type: AWS::SSM::Parameter
     Properties:
@@ -165,10 +155,8 @@ Resources:
       Description: Indicates whether over balance
       AllowedPattern: "^(1|0)$"
       Tags:
-        - Key: Environment
-          Value: !Ref Environment
-        - Key: Application
-          Value: !Ref Project
+        Environment: !Ref Environment
+        Application: !Ref Project
 
   # Nested Stacks
   IAM:
