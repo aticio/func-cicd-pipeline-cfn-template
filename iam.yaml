@@ -30,6 +30,7 @@ Resources:
                   - "cloudformation:*"
                   - "iam:*"
                   - "lambda:*"
+                  - "events:PutRule"
                 Resource: "*"
       ManagedPolicyArns:
         - "arn:aws:iam::aws:policy/AWSLambdaExecute"
